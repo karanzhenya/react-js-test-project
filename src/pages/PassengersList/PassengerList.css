@@ -1,0 +1,21 @@
+.passengersList {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 10px;
+}
+
+.passengersList li {
+    list-style-type: none;
+}
+
+.backButton {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.backButton:hover {
+    color: #4b80f3;
+}

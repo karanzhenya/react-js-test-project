@@ -1,0 +1,33 @@
+.settings {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100px;
+    min-width: 100%;
+}
+
+.settingsContainer {
+    margin: 10px;
+    min-width: 55%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.settingsControllers {
+    display: flex;
+    gap: 8px;
+}
+
+.settingsControllers button {
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    border-radius: 6px;
+    border: none;
+    transition: background-color 0.6s ease;
+}
+
+.settingsControllers button:hover {
+    background-color: #4b80f3;
+    border: none;
+}

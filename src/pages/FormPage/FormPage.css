@@ -1,0 +1,154 @@
+/*минимальный сброс стилей*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.formPage {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: rgb(218, 216, 216);
+    align-items: center;
+    width: 100%;
+}
+
+.form {
+    min-width: 100%;
+    margin: 10px 0 10px 0;
+    padding: 0 10px 0 10px;
+}
+
+.formContainer {
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.formContainer h3 {
+    padding-bottom: 10px;
+}
+
+.formFields {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.formFields input, select {
+    min-height: 40px;
+}
+
+.formFields button {
+    height: 40px;
+    width: 40px;
+}
+
+/*кнопка отправить*/
+.submitButton input {
+    width: 150px;
+    height: 20px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    background-color: white;
+    transition: background-color 0.45s ease;
+}
+
+.submitButton input:hover {
+    background-color: #4b80f3;
+}
+
+.itemForm p {
+    display: flex;
+    flex-direction: column;
+    color: red;
+}
+
+.itemForm select:first-child {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.itemForm select, input {
+    width: 100%;
+}
+
+
+/*Выбор пола*/
+.genderToggle {
+    display: inline-block;
+    overflow: hidden;
+}
+
+.genderToggleItem {
+    float: left;
+    display: inline-block;
+}
+
+.genderToggleItem input[type=radio] {
+    display: none;
+}
+
+.genderToggleItem label {
+    display: inline-block;
+    padding: 0 15px;
+    line-height: 34px;
+    border: 1px solid #999;
+    border-right: none;
+    cursor: pointer;
+    user-select: none;
+}
+
+.genderToggle .male label {
+    border-radius: 6px 0 0 6px;
+    transition: background-color 0.45s ease;
+}
+
+.genderToggle .female label {
+    border-radius: 0 6px 6px 0;
+    border-right: 1px solid #999;
+    transition: background-color 0.45s ease;
+}
+
+.genderToggle input[type=radio]:checked + label {
+    background-color: #4b80f3;
+}
+
+.genderToggle label:hover {
+    background-color: #4b80f3;
+}
+
+/*ошибки*/
+.error {
+    border: 1px solid red;
+    border-radius: 3px;
+}
+
+/*адаптив*/
+@media screen and (max-width: 768px) {
+    .formFields {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .settingsContainer {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .formFields {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .settingsContainer {
+        width: 100%;
+    }
+
+    .submitButton {
+        width: 100%;
+    }
+}
