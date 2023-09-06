@@ -67,7 +67,7 @@ function FormPage(props) {
                         return (
                             <div key={field.id} className="formContainer">
                                 <h3>Данные о пассажире {index + 1}</h3>
-                                <section className={"formFields"} key={Date.now()}>
+                                <section className={"formFields"} key={field.id}>
                                     <label className='itemForm'>
                                         <select
                                             placeholder="Гражданство"
@@ -152,7 +152,8 @@ function FormPage(props) {
                                         {errors.passengers && <p>{errors?.passengers[index]?.middleName?.message}</p>}
                                     </label>
                                     <label className='itemForm'>
-                                        <input type='date'
+                                        <input type='text'
+                                               onFocus={(e) => (e.target.type = "date")}
                                                placeholder="Дата рождения"
                                                {...register(`passengers.${index}.birthday`, {
                                                    required: errorsEnum.required
@@ -198,7 +199,7 @@ function FormPage(props) {
                         );
                     })}
                     <div className='submitButton'>
-                        <input type="submit"/>
+                        <input type="submit" value='Отправить' name='Отправить'/>
                     </div>
                 </form>
             </section>

@@ -6,6 +6,10 @@
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
+select, option {
+    -webkit-appearance: none
+}
+
 .formPage {
     display: flex;
     flex-direction: column;
@@ -43,6 +47,10 @@
     min-height: 40px;
 }
 
+.formFields input, select::-webkit-input-placeholder {
+    padding-left: 4%;
+ }
+
 .formFields button {
     height: 40px;
     width: 40px;
@@ -71,6 +79,7 @@
 
 .itemForm select:first-child {
     color: rgba(0, 0, 0, 0.6);
+    padding-left: 4%;
 }
 
 .itemForm select, input {
