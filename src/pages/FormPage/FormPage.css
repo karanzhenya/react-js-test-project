@@ -49,7 +49,7 @@
 }
 
 /*кнопка отправить*/
-.submitButton button {
+.submitButton input {
     width: 150px;
     height: 20px;
     border-radius: 3px;
@@ -59,7 +59,7 @@
     transition: background-color 0.45s ease;
 }
 
-.submitButton button:hover {
+.submitButton input:hover {
     background-color: #4b80f3;
 }
 
