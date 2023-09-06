@@ -8,7 +8,6 @@ function App() {
     const changePassengersData = (newPassengers) => {
         setPassengers(newPassengers)
     }
-    console.log(passengers)
     return (
             <Routes>
                 <Route path={'/'} element={<FormPage changePassengersData={changePassengersData}/>}/>
