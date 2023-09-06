@@ -4,10 +4,11 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    -webkit-appearance: none
 }
 
-
+select, option {
+    -webkit-appearance: none
+}
 
 .formPage {
     display: flex;
