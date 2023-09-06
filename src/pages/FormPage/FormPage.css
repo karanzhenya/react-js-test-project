@@ -63,6 +63,12 @@
     background-color: #4b80f3;
 }
 
+.submitButton input[type="submit"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 .itemForm p {
     display: flex;
     flex-direction: column;
