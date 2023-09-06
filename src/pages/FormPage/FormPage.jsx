@@ -199,7 +199,7 @@ function FormPage(props) {
                         );
                     })}
                     <div className='submitButton'>
-                        <input type="submit" value='Отправить'/>
+                        <button type="submit">Отправить</button>
                     </div>
                 </form>
             </section>
