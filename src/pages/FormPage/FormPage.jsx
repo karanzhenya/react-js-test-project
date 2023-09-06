@@ -55,8 +55,10 @@ function FormPage(props) {
         setPassengersCount(passengersCount + 1)
     }
     const removePassenger = () => {
-        remove(fields.length - 1)
-        setPassengersCount(passengersCount - 1)
+        if (passengersCount > 1) {
+            remove(fields.length - 1)
+            setPassengersCount(passengersCount - 1)
+        }
     }
     return (
         <div className='formPage'>
