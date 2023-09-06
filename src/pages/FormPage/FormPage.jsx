@@ -65,7 +65,7 @@ function FormPage(props) {
                 <form onSubmit={handleSubmit(onSubmit)}>
                     {fields.map((field, index) => {
                         return (
-                            <div key={Date.now()} className="formContainer">
+                            <div key={field.id} className="formContainer">
                                 <h3>Данные о пассажире {index + 1}</h3>
                                 <section className={"formFields"} key={Date.now()}>
                                     <label className='itemForm'>
