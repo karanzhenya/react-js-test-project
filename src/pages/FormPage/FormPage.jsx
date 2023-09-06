@@ -152,7 +152,8 @@ function FormPage(props) {
                                         {errors.passengers && <p>{errors?.passengers[index]?.middleName?.message}</p>}
                                     </label>
                                     <label className='itemForm'>
-                                        <input type='date'
+                                        <input type='text'
+                                               onFocus={(e) => (e.target.type = "date")}
                                                placeholder="Дата рождения"
                                                {...register(`passengers.${index}.birthday`, {
                                                    required: errorsEnum.required
