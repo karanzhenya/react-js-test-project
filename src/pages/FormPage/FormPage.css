@@ -79,6 +79,7 @@ select, option {
 
 .itemForm select:first-child {
     color: rgba(0, 0, 0, 0.6);
+    padding-left: 4%;
 }
 
 .itemForm select, input {
