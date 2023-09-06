@@ -47,6 +47,10 @@ select, option {
     min-height: 40px;
 }
 
+.formFields input, select::-webkit-input-placeholder {
+    padding-left: 4%;
+ }
+
 .formFields button {
     height: 40px;
     width: 40px;
