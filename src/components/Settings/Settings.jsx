@@ -1,22 +1,22 @@
 import {wordEnding} from "../../assets/wordEnding";
 import './Settings.css'
 
-export default function Settings(props) {
+export default function Settings({removePassenger, passengersCount, addPassenger}) {
     return (
         <section className='settings'>
             <div className='settingsContainer'>
                 <div className='countSettings'>
                     <h4>Количество пассажиров</h4>
                     <div className='settingsControllers'>
-                        <button onClick={props.removePassenger}>-</button>
-                        <span>{props.passengersCount}</span>
-                        <button onClick={props.addPassenger}>+</button>
+                        <button onClick={removePassenger}>-</button>
+                        <span>{passengersCount}</span>
+                        <button onClick={addPassenger}>+</button>
                     </div>
                 </div>
                 <div className='priceBlock'>
                     <span>стоимость</span>
-                    <h4>{props.passengersCount*849} RUB</h4>
-                    <span className='ticketsCountInfo'>за {props.passengersCount} {wordEnding('билет', props.passengersCount)}</span>
+                    <h4>{passengersCount*849} RUB</h4>
+                    <span className='ticketsCountInfo'>за {passengersCount} {wordEnding('билет', passengersCount)}</span>
                 </div>
             </div>
         </section>

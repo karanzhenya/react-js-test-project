@@ -3,10 +3,11 @@ import {useNavigate} from "react-router-dom";
 import {useFieldArray, useForm} from "react-hook-form";
 import {v1} from 'uuid';
 import Settings from "../../components/Settings/Settings";
-import {ageRate, document, errorsEnum, gender, nationality} from "../../enum/enum";
+import {ageRate, document, errorsEnum, errorsMessage, gender, nationality} from "../../constants/constants";
 import './FormPage.css'
+import {SelectOptions} from "../../assets/SelectOptions";
 
-function FormPage(props) {
+function FormPage({changePassengersData}) {
     const [passengersCount, setPassengersCount] = useState(1)
     const navigate = useNavigate();
     const {
@@ -36,7 +37,7 @@ function FormPage(props) {
         control
     });
     const onSubmit = (data) => {
-        props.changePassengersData(data[`passengers`])
+        changePassengersData(data[`passengers`])
         navigate('/passengers')
     };
     const addPassenger = () => {
@@ -77,15 +78,10 @@ function FormPage(props) {
                                                 required: errorsEnum.required
                                             })}
                                             className={errors?.passengers?.[index]?.nationality ? "error" : ""}
-                                            defaultValue={nationality.Belarus}
                                         >
-                                            <option value='' disabled>Выберите Гражданство</option>
-                                            <option value={nationality.Belarus}>{nationality.Belarus}</option>
-                                            <option value={nationality.Russian}>{nationality.Russian}</option>
-                                            <option value={nationality.Ukraine}>{nationality.Ukraine}</option>
-                                            <option value={nationality.French}>{nationality.French}</option>
+                                            <SelectOptions array={nationality} initialText='Выберите гражданство'/>
                                         </select>
-                                        {errors.passengers && <p>{errors?.passengers[index]?.nationality?.message}</p>}
+                                        {errors?.passengers && <p>{errors?.passengers[index]?.nationality?.message}</p>}
                                     </label>
                                     <label className='itemForm'>
                                         <select
@@ -94,12 +90,8 @@ function FormPage(props) {
                                                 required: errorsEnum.required
                                             })}
                                             className={errors?.passengers?.[index]?.ageRate ? "error" : ""}
-                                            defaultValue={ageRate.children}
                                         >
-                                            <option value='' disabled>Выберите возрастной тариф</option>
-                                            <option value={ageRate.children}>{ageRate.children}</option>
-                                            <option value={ageRate.teenager}>{ageRate.teenager}</option>
-                                            <option value={ageRate.adult}>{ageRate.adult}</option>
+                                            <SelectOptions array={ageRate} initialText='Выберите возрастной тариф'/>
                                         </select>
                                         {errors.passengers && <p>{errors?.passengers[index]?.ageRate?.message}</p>}
                                     </label>
@@ -161,7 +153,6 @@ function FormPage(props) {
                                                    required: errorsEnum.required
                                                })}
                                                className={errors?.passengers?.[index]?.birthday ? "error" : ""}
-                                               defaultValue={''}
                                         />
                                         {errors.passengers && <p>{errors?.passengers[index]?.birthday?.message}</p>}
                                     </label>
@@ -171,16 +162,8 @@ function FormPage(props) {
                                                 required: errorsEnum.required
                                             })}
                                             className={errors?.passengers?.[index]?.document ? "error" : ""}
-                                            defaultValue={document.passport}
                                         >
-                                            <option value='' disabled>Выберите вид документа</option>
-                                            <option value={document.passport}>{document.passport}</option>
-                                            <option
-                                                value={document.birthCertificate}>{document.birthCertificate}</option>
-                                            <option value={document.driverLicense}>{document.driverLicense}</option>
-                                            <option value={document.residentCard}>{document.residentCard}</option>
-                                            <option
-                                                value={document.internationalPassport}>{document.internationalPassport}</option>
+                                            <SelectOptions array={document} initialText='Выберите вид документа'/>
                                         </select>
                                         {errors.passengers && <p>{errors?.passengers[index]?.document?.message}</p>}
                                     </label>
@@ -188,13 +171,11 @@ function FormPage(props) {
                                         <input
                                             placeholder="Номер документа"
                                             {...register(`passengers.${index}.documentNumber`, {
-                                                required: errorsEnum.required
+                                                required: errorsMessage.required
                                             })}
                                             className={errors?.passengers?.[index]?.documentNumber ? "error" : ""}
-                                            defaultValue={''}
                                         />
-                                        {errors.passengers &&
-                                            <p>{errors?.passengers[index]?.documentNumber?.message}</p>}
+                                        {errors.passengers && <p>{errors?.passengers[index]?.documentNumber?.message}</p>}
                                     </label>
                                 </section>
                             </div>
