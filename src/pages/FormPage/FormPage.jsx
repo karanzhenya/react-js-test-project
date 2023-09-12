@@ -3,7 +3,7 @@ import {useNavigate} from "react-router-dom";
 import {useFieldArray, useForm} from "react-hook-form";
 import {v1} from 'uuid';
 import Settings from "../../components/Settings/Settings";
-import {ageRate, document, errorsEnum, errorsMessage, gender, nationality} from "../../constants/constants";
+import {ageRate, document, errorsMessage, gender, nationality} from "../../constants/constants";
 import './FormPage.css'
 import {SelectOptions} from "../../assets/SelectOptions";
 
@@ -75,7 +75,7 @@ function FormPage({changePassengersData}) {
                                         <select
                                             placeholder="Гражданство"
                                             {...register(`passengers.${index}.nationality`, {
-                                                required: errorsEnum.required
+                                                required: errorsMessage.required
                                             })}
                                             className={errors?.passengers?.[index]?.nationality ? "error" : ""}
                                         >
@@ -87,7 +87,7 @@ function FormPage({changePassengersData}) {
                                         <select
                                             placeholder="Возрастной тариф"
                                             {...register(`passengers.${index}.ageRate`, {
-                                                required: errorsEnum.required
+                                                required: errorsMessage.required
                                             })}
                                             className={errors?.passengers?.[index]?.ageRate ? "error" : ""}
                                         >
@@ -99,13 +99,13 @@ function FormPage({changePassengersData}) {
                                         <div className="genderToggle">
                                             <div className="genderToggleItem male">
                                                 <input {...register(`passengers.${index}.gender`, {
-                                                    required: errorsEnum.requiredMaleFemale
+                                                    required: errorsMessage.requiredMaleFemale
                                                 })} id={`${index} + male`} type="radio" value={gender.male}/>
                                                 <label htmlFor={`${index} + male`}>М</label>
                                             </div>
                                             <div className="genderToggleItem female">
                                                 <input {...register(`passengers.${index}.gender`, {
-                                                    required: errorsEnum.requiredMaleFemale
+                                                    required: errorsMessage.requiredMaleFemale
                                                 })} id={`${index} + female`} type="radio" value={gender.female}/>
                                                 <label htmlFor={`${index} + female`}>Ж</label>
                                             </div>
@@ -116,7 +116,7 @@ function FormPage({changePassengersData}) {
                                         <input
                                             placeholder="Фамилия"
                                             {...register(`passengers.${index}.surname`, {
-                                                required: errorsEnum.required
+                                                required: errorsMessage.required
                                             })}
                                             className={errors?.passengers?.[index]?.surname ? "error" : ""}
                                             defaultValue={''}
@@ -127,7 +127,7 @@ function FormPage({changePassengersData}) {
                                         <input
                                             placeholder="Имя"
                                             {...register(`passengers.${index}.firstName`, {
-                                                required: errorsEnum.required
+                                                required: errorsMessage.required
                                             })}
                                             className={errors?.passengers?.[index]?.firstName ? "error" : ""}
                                             defaultValue={''}
@@ -138,7 +138,7 @@ function FormPage({changePassengersData}) {
                                         <input
                                             placeholder="Отчество"
                                             {...register(`passengers.${index}.middleName`, {
-                                                required: errorsEnum.required
+                                                required: errorsMessage.required
                                             })}
                                             className={errors?.passengers?.[index]?.middleName ? "error" : ""}
                                             defaultValue={''}
@@ -150,7 +150,7 @@ function FormPage({changePassengersData}) {
                                                onFocus={(e) => (e.target.type = "date")}
                                                placeholder="Дата рождения"
                                                {...register(`passengers.${index}.birthday`, {
-                                                   required: errorsEnum.required
+                                                   required: errorsMessage.required
                                                })}
                                                className={errors?.passengers?.[index]?.birthday ? "error" : ""}
                                         />
@@ -159,7 +159,7 @@ function FormPage({changePassengersData}) {
                                     <label className='itemForm'>
                                         <select
                                             {...register(`passengers.${index}.document`, {
-                                                required: errorsEnum.required
+                                                required: errorsMessage.required
                                             })}
                                             className={errors?.passengers?.[index]?.document ? "error" : ""}
                                         >
