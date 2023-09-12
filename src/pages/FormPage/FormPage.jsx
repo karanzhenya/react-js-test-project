@@ -100,13 +100,13 @@ function FormPage({changePassengersData}) {
                                             <div className="genderToggleItem male">
                                                 <input {...register(`passengers.${index}.gender`, {
                                                     required: errorsMessage.requiredMaleFemale
-                                                })} id={`${index} + male`} type="radio" value={gender.male}/>
+                                                })} id={`${index} + male`} type="radio" />
                                                 <label htmlFor={`${index} + male`}>М</label>
                                             </div>
                                             <div className="genderToggleItem female">
                                                 <input {...register(`passengers.${index}.gender`, {
                                                     required: errorsMessage.requiredMaleFemale
-                                                })} id={`${index} + female`} type="radio" value={gender.female}/>
+                                                })} id={`${index} + female`} type="radio" />
                                                 <label htmlFor={`${index} + female`}>Ж</label>
                                             </div>
                                         </div>
