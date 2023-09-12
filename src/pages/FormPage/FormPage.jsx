@@ -79,7 +79,7 @@ function FormPage(props) {
                                             className={errors?.passengers?.[index]?.nationality ? "error" : ""}
                                             defaultValue={nationality.Belarus}
                                         >
-                                            <option value='' disabled selected>Выберите Гражданство</option>
+                                            <option value='' disabled>Выберите Гражданство</option>
                                             <option value={nationality.Belarus}>{nationality.Belarus}</option>
                                             <option value={nationality.Russian}>{nationality.Russian}</option>
                                             <option value={nationality.Ukraine}>{nationality.Ukraine}</option>
@@ -96,7 +96,7 @@ function FormPage(props) {
                                             className={errors?.passengers?.[index]?.ageRate ? "error" : ""}
                                             defaultValue={ageRate.children}
                                         >
-                                            <option value='' disabled selected>Выберите возрастной тариф</option>
+                                            <option value='' disabled>Выберите возрастной тариф</option>
                                             <option value={ageRate.children}>{ageRate.children}</option>
                                             <option value={ageRate.teenager}>{ageRate.teenager}</option>
                                             <option value={ageRate.adult}>{ageRate.adult}</option>
@@ -118,7 +118,7 @@ function FormPage(props) {
                                                 <label htmlFor={`${index} + female`}>Ж</label>
                                             </div>
                                         </div>
-                                        {errors.passengers && <p>{errors?.passengers[index]?.gender?.message}</p>}
+                                        {errors?.passengers && <p>{errors?.passengers[index]?.gender?.message}</p>}
                                     </label>
                                     <label className='itemForm'>
                                         <input
@@ -173,7 +173,7 @@ function FormPage(props) {
                                             className={errors?.passengers?.[index]?.document ? "error" : ""}
                                             defaultValue={document.passport}
                                         >
-                                            <option value='' disabled selected>Выберите вид документа</option>
+                                            <option value='' disabled>Выберите вид документа</option>
                                             <option value={document.passport}>{document.passport}</option>
                                             <option
                                                 value={document.birthCertificate}>{document.birthCertificate}</option>
